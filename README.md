@@ -1,7 +1,9 @@
-# ClimaxDJ
+# ClimaxDJ website
 
-Marketing- und Download-Seite für ClimaxDJ 4.3.0.
+Marketing + download site for ClimaxDJ 4.3.0.
 
 - Live: https://playnation18.github.io/climaxdj/
-- Windows-Installer: [Releases](https://github.com/PlayNation18/climaxdj/releases)
-- Mac: bald verfügbar
+- Windows installer: [Releases](https://github.com/PlayNation18/climaxdj/releases)
+- macOS: Coming Soon
+
+This repository is the **website only**. It does not modify the ClimaxDJ desktop app engine.

@@ -1,210 +1,377 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ClimaxDJ – DJ + DAW für Windows</title>
-  <meta name="description" content="ClimaxDJ 4.3.0: Auto-DJ mit weichen Übergängen, 4-Stem-Trennung, Tonart-Markierung, Sampler mit Slicer, Aufnahme und VST-Support. Jetzt für Windows laden.">
-  <meta name="theme-color" content="#05070a">
-  <link rel="icon" href="./assets/icon.png" type="image/png">
-  <meta property="og:title" content="ClimaxDJ – DJ + DAW">
-  <meta property="og:description" content="Desktop-App für DJing und Produktion. Auto-DJ, Stems, Sampler, VST. Version 4.3.0 für Windows.">
+  <title>ClimaxDJ – Beyond the Mix | Professional DJ Software</title>
+  <meta name="description" content="ClimaxDJ 4.3.0 – professional DJ + DAW software for Windows. Auto DJ, 4-stem separation, Camelot keys, sampler, VST, MIDI. Try the interactive demo, then download.">
+  <meta name="theme-color" content="#080808">
+  <meta property="og:title" content="ClimaxDJ – Beyond the Mix">
+  <meta property="og:description" content="Professional DJ Software. Designed for your creativity. Version 4.3.0 for Windows.">
   <meta property="og:image" content="./screenshots/hero-dj.jpg">
   <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./assets/icon.png" type="image/png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <a class="sr-only" href="#download">Zum Download springen</a>
+  <a class="sr-only" href="#main">Skip to content</a>
 
-  <header class="nav" role="banner">
-    <a class="nav__mark" href="#top">ClimaxDJ</a>
-    <nav aria-label="Hauptnavigation">
+  <div id="loader" role="status" aria-live="polite">
+    <div>
+      <div class="loader__mark">Climax<span>DJ</span></div>
+      <div class="loader__bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <header class="nav" id="nav" role="banner">
+    <a class="nav__logo" href="#top">Climax<span>DJ</span></a>
+    <nav aria-label="Primary">
       <ul class="nav__links">
-        <li><a href="#features">Funktionen</a></li>
-        <li><a href="#gallery">Einblicke</a></li>
-        <li><a href="#specs">System</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#showcase">Software</a></li>
+        <li><a href="#demo">Try Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
       </ul>
     </nav>
-    <a class="nav__cta" href="#download">Download</a>
+    <a class="nav__cta" href="#download">Get ClimaxDJ</a>
+    <button class="nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span></button>
   </header>
+  <div class="nav__mobile" id="mobileNav" hidden>
+    <a href="#showcase">Software</a>
+    <a href="#demo">Try Demo</a>
+    <a href="#features">Features</a>
+    <a href="#audiox">Audio</a>
+    <a href="#download">Download</a>
+    <a href="./docs.html">Documentation</a>
+  </div>
 
-  <main id="top">
-    <section class="hero" aria-label="Einstieg">
-      <!-- Hero video slot: drop /assets/hero.mp4 when ready. JS enables it if the file exists. -->
+  <main id="main">
+    <!-- 1 HERO -->
+    <section class="hero" id="top" aria-label="Hero">
+      <canvas class="hero__canvas" id="heroWave" aria-hidden="true"></canvas>
       <video class="hero__video" id="heroVideo" muted loop playsinline preload="none" poster="./screenshots/hero-dj.jpg">
         <source src="./assets/hero.mp4" type="video/mp4">
       </video>
+      <div class="hero__glow" id="heroGlow" aria-hidden="true"></div>
       <div class="hero__scrim" aria-hidden="true"></div>
-
-      <div class="hero__top">
-        <p class="hero__support">DJ und DAW in einer Desktop-App. Tempo und Tonhöhe bleiben beim Auto-DJ original – Übergänge laufen über weiche Fades, EQ und Filter.</p>
-        <p class="hero__version">Version 4.3.0<br>Windows x64</p>
-      </div>
-
-      <h1 class="hero__monument">
-        <span class="hero__line"><span>Climax</span></span>
-        <span class="hero__line"><span>DJ</span></span>
-      </h1>
-
-      <div class="hero__actions" id="download">
-        <a class="btn btn--primary" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>
-          Windows laden
-          <small>Setup · ca. 72&nbsp;MB</small>
-        </a>
-        <span class="btn btn--disabled" aria-disabled="true" title="Mac-Build folgt">
-          Mac
-          <small>bald verfügbar</small>
-        </span>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Professional DJ Software</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Beyond</span></span>
+          <span class="line"><span>the Mix.</span></span>
+        </h1>
+        <p class="hero__sub">Professional DJ Software. Designed for your creativity.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#showcase">Explore ClimaxDJ</a>
+          <a class="btn btn--ghost" href="#features">Discover Features</a>
+        </div>
       </div>
     </section>
 
+    <!-- 2 SHOWCASE -->
+    <section class="showcase" id="showcase" aria-labelledby="showcase-title">
+      <div class="wrap-wide">
+        <p class="section-kicker">Cinematic product showcase</p>
+        <h2 class="section-title" id="showcase-title">Your sound. Your control.</h2>
+        <p class="section-lead">The real ClimaxDJ 4.3.0 interface — dual decks, mixer, library and DAW — presented like a flagship product film. Scroll to move through the desk.</p>
+
+        <div class="showcase__stage" id="showcaseStage">
+          <div class="showcase__frame" id="showcaseFrame" data-perspective>
+            <img src="./screenshots/hero-dj.jpg" width="1600" height="1000" alt="ClimaxDJ dual-deck DJ interface with waveforms, mixer and library" id="showcaseImg">
+          </div>
+        </div>
+
+        <div class="showcase__thumbs" id="showcaseThumbs" style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
+          <button type="button" class="chip is-on" data-shot="hero-dj.jpg" data-label="DJ decks">DJ Decks</button>
+          <button type="button" class="chip" data-shot="library.jpg" data-label="Library">Library</button>
+          <button type="button" class="chip" data-shot="stems.jpg" data-label="Stems">Stems</button>
+          <button type="button" class="chip" data-shot="slicer.jpg" data-label="Sampler">Sampler</button>
+          <button type="button" class="chip" data-shot="vst.jpg" data-label="VST">VST</button>
+          <button type="button" class="chip" data-shot="hero-daw.jpg" data-label="DAW">DAW</button>
+        </div>
+
+        <div class="showcase__callouts" aria-label="Interface callouts">
+          <div class="callout"><strong>Two decks</strong><span>Independent A/B with waveforms</span></div>
+          <div class="callout"><strong>Master BPM</strong><span>Tap tempo &amp; sync</span></div>
+          <div class="callout"><strong>Crossfader</strong><span>Smooth / Linear / Cut</span></div>
+          <div class="callout"><strong>Mixer</strong><span>Channel faders &amp; headroom</span></div>
+          <div class="callout"><strong>EQ &amp; FX</strong><span>Hi / Mid / Low / Filter + effects</span></div>
+          <div class="callout"><strong>Cue · Sync · Slip</strong><span>Performance transport</span></div>
+          <div class="callout"><strong>Loops &amp; samples</strong><span>Pads: Hot, Loop, Roll, Jump, Samp</span></div>
+          <div class="callout"><strong>Browser</strong><span>Playlists, search, Camelot keys</span></div>
+          <div class="callout"><strong>Recording</strong><span>DJ mix + mic / line into DAW</span></div>
+          <div class="callout"><strong>Mic</strong><span>Live mic into the mix</span></div>
+          <div class="callout"><strong>MIDI</strong><span>Controllers incl. DDJ-FLX4</span></div>
+          <div class="callout"><strong>Analysis</strong><span>BPM, key &amp; energy</span></div>
+          <div class="callout"><strong>Smart suggestions</strong><span>Harmonic next-track tips</span></div>
+          <div class="callout"><strong>Export</strong><span>Prepare / History txt·csv · WAV</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 INTERACTIVE DEMO -->
+    <section class="demo" id="demo" aria-labelledby="demo-title">
+      <div class="wrap-wide">
+        <span class="demo__badge">Website demo – simulated, not the ClimaxDJ audio engine</span>
+        <p class="section-kicker">Try ClimaxDJ before you download</p>
+        <h2 class="section-title" id="demo-title">Interactive DJ experience</h2>
+        <p class="section-lead">Switch decks, ride the crossfader, twist EQ, fire Cue/Play, flip waveforms and load tracks from a simulated crate. Optional soft tones stay muted until you unmute.</p>
+
+        <div class="demo__panel">
+          <div class="deck-board">
+            <div class="deck-row">
+              <article class="deck is-active" id="deckA" data-deck="A">
+                <div class="deck__head"><span>Deck A</span><span id="deckAState">READY</span></div>
+                <div class="deck__title" id="deckATitle">Nachtkante</div>
+                <div class="deck__meta" id="deckAMeta">Nord · 124.0 BPM · 8A</div>
+                <canvas class="deck__wave" id="waveA" width="640" height="128" aria-label="Deck A waveform"></canvas>
+                <div class="deck__controls">
+                  <button type="button" class="chip" data-act="cue" data-deck="A">Cue</button>
+                  <button type="button" class="chip is-play" data-act="play" data-deck="A">Play</button>
+                  <button type="button" class="chip" data-act="sync" data-deck="A">Sync</button>
+                  <button type="button" class="chip" data-act="slip" data-deck="A">Slip</button>
+                </div>
+              </article>
+
+              <div class="xfader-wrap">
+                <label for="xfader">Crossfader</label>
+                <input id="xfader" class="xfader" type="range" min="0" max="100" value="50" aria-label="Crossfader">
+                <span id="xfaderVal" style="font-size:.75rem;color:var(--text2)">50</span>
+              </div>
+
+              <article class="deck" id="deckB" data-deck="B">
+                <div class="deck__head"><span>Deck B</span><span id="deckBState">READY</span></div>
+                <div class="deck__title" id="deckBTitle">Hafenlicht</div>
+                <div class="deck__meta" id="deckBMeta">Kai · 126.0 BPM · 8B</div>
+                <canvas class="deck__wave" id="waveB" width="640" height="128" aria-label="Deck B waveform"></canvas>
+                <div class="deck__controls">
+                  <button type="button" class="chip" data-act="cue" data-deck="B">Cue</button>
+                  <button type="button" class="chip is-play" data-act="play" data-deck="B">Play</button>
+                  <button type="button" class="chip" data-act="sync" data-deck="B">Sync</button>
+                  <button type="button" class="chip" data-act="slip" data-deck="B">Slip</button>
+                </div>
+              </article>
+            </div>
+
+            <div class="eq-row" aria-label="EQ controls">
+              <div class="eq"><label for="eqHi">Hi</label><input id="eqHi" type="range" min="-12" max="12" value="0"><output id="eqHiOut">0 dB</output></div>
+              <div class="eq"><label for="eqMid">Mid</label><input id="eqMid" type="range" min="-12" max="12" value="0"><output id="eqMidOut">0 dB</output></div>
+              <div class="eq"><label for="eqLow">Low</label><input id="eqLow" type="range" min="-12" max="12" value="0"><output id="eqLowOut">0 dB</output></div>
+            </div>
+
+            <div>
+              <div class="side-card" style="padding:0;border:0;background:transparent">
+                <h3 style="margin-bottom:.6rem">Effects · active deck</h3>
+                <div class="fx-grid" id="fxGrid">
+                  <button type="button" class="chip" data-fx="echo">Echo</button>
+                  <button type="button" class="chip" data-fx="filter">Filter</button>
+                  <button type="button" class="chip" data-fx="reverb">Reverb</button>
+                  <button type="button" class="chip" data-fx="brake">Brake</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-panel">
+            <div class="side-card">
+              <h3>Tempo</h3>
+              <div class="bpm-box">
+                <div>
+                  <div class="bpm-val" id="bpmVal">124.0</div>
+                  <div class="pitch-val" id="pitchVal">Pitch 0.0%</div>
+                </div>
+                <div style="display:grid;gap:.4rem">
+                  <button type="button" class="chip" id="bpmUp" aria-label="Increase BPM">BPM +</button>
+                  <button type="button" class="chip" id="bpmDown" aria-label="Decrease BPM">BPM −</button>
+                  <button type="button" class="chip" id="pitchUp" aria-label="Increase pitch">Pitch +</button>
+                  <button type="button" class="chip" id="pitchDown" aria-label="Decrease pitch">Pitch −</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="side-card">
+              <h3>Waveform style</h3>
+              <div class="wave-modes" id="waveModes">
+                <button type="button" class="chip is-on" data-wmode="classic">Classic</button>
+                <button type="button" class="chip" data-wmode="rgb">RGB</button>
+                <button type="button" class="chip" data-wmode="pulse">Pulse</button>
+              </div>
+            </div>
+
+            <div class="side-card">
+              <h3>Library</h3>
+              <ul class="lib" id="libList"></ul>
+              <p style="margin:.8rem 0 0;font-size:.75rem;color:var(--text2)">Click a track to load it into the active deck.</p>
+            </div>
+
+            <div class="side-card">
+              <h3>Audio (optional)</h3>
+              <button type="button" class="btn btn--ghost btn--block" id="audioToggle">Unmute soft tone</button>
+              <p style="margin:.6rem 0 0;font-size:.75rem;color:var(--text2)">Muted by default. Synthetic beep/loop only — not the ClimaxDJ engine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 FEATURES -->
     <section class="features" id="features" aria-labelledby="features-title">
-      <h2 class="features__head" id="features-title">Was drin ist</h2>
-
-      <article class="feature">
-        <div class="feature__copy">
-          <h3 class="feature__title">Auto-DJ, der das Tempo lässt</h3>
-          <p class="feature__text">Übergänge starten auf einer 8-Takt-Phrase. Der neue Track setzt mit dem ersten Downbeat ein. Bass-Swap zur Hälfte, weiche Lautstärkekurven. Tempo und Pitch bleiben unverändert – bei größeren Abständen greifen Filter-Sweep oder Echo-Out.</p>
+      <div class="wrap">
+        <p class="section-kicker">Built for the booth</p>
+        <h2 class="section-title" id="features-title">Everything you need to mix</h2>
+        <p class="section-lead">Real capabilities from ClimaxDJ 4.3.0 — the same stack you’d expect next to VirtualDJ, Serato or rekordbox.</p>
+        <div class="feature-grid" id="featureGrid">
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="12" r="3"/><path d="M10 12h4"/></svg></div>
+            <h3>Professional Mixing</h3>
+            <p>Dual decks, crossfader modes, EQ, filter, Sync, Slip and Auto DJ with soft fades — tempo and pitch stay original.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/><path d="M4 18h16"/></svg></div>
+            <h3>Intelligent BPM Analysis</h3>
+            <p>Background analysis tags BPM, Camelot key and energy so the crate stays mix-ready.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h2l2-6 3 12 3-9 2 5h6"/></svg></div>
+            <h3>Real-Time Waveforms</h3>
+            <p>Scrolling multi-band waveforms on each deck with beatgrid, zoom and hotcue markers.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2"/></svg></div>
+            <h3>Advanced Audio Effects</h3>
+            <p>Reverb, delay, echo, filter, brake and slicer on the decks — plus mixer drive, comp and hall in the DAW.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="13" width="7" height="7" rx="1"/><rect x="14" y="13" width="7" height="7" rx="1"/></svg></div>
+            <h3>Loops &amp; Samples</h3>
+            <p>Performance pads for Hot, Loop, Roll, Jump and Sampler — with a DAW slicer for precise chops.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v4"/><path d="M8 21h8"/><path d="M12 7a5 5 0 0 1 5 5v2l2 3H5l2-3v-2a5 5 0 0 1 5-5z"/></svg></div>
+            <h3>AI-Powered Features</h3>
+            <p>4-stem separation (vocals, drums, bass, melody) via Demucs, plus smart harmonic suggestions.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="10" rx="2"/><circle cx="8" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="16" cy="12" r="1.5"/></svg></div>
+            <h3>MIDI Controller Support</h3>
+            <p>MIDI learn and ready mapping for Pioneer DDJ-FLX4 — play, cue, sync, EQ, faders, crossfader, hotcues.</p>
+          </article>
+          <article class="fcard">
+            <div class="fcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2"/></svg></div>
+            <h3>Professional Recording</h3>
+            <p>Record the DJ master or mic/line into the DAW as WAV or MP3 — plus stem and song export.</p>
+          </article>
         </div>
-        <div class="feature__media">
-          <img src="./screenshots/hero-dj.jpg" width="1600" height="900" alt="ClimaxDJ DJ-Ansicht mit zwei Decks, Waveforms und Bibliothek" loading="eager">
+        <div class="extras" aria-label="Also included">
+          <span>Auto DJ soft fades</span>
+          <span>4-stem separation</span>
+          <span>Camelot key marking</span>
+          <span>Sampler / Slicer</span>
+          <span>VST finder</span>
+          <span>Kontakt 7 · Maschine 2 · Massive X</span>
         </div>
-      </article>
-
-      <article class="feature">
-        <div class="feature__copy">
-          <h3 class="feature__title">Vier Stems aus einem Track</h3>
-          <p class="feature__text">Vocals, Drums, Bass und Melodie trennen – per KI-Engine (Demucs) oder schnell ohne KI. Danach einzeln mischen, muten oder in die DAW ziehen.</p>
-        </div>
-        <div class="feature__media">
-          <img src="./screenshots/stems.jpg" width="1600" height="1000" alt="Dialog Stems trennen in ClimaxDJ mit Vocals, Drums, Bass und Melodie" loading="lazy">
-        </div>
-      </article>
-
-      <article class="feature">
-        <div class="feature__copy">
-          <h3 class="feature__title">Tonart in der Bibliothek</h3>
-          <p class="feature__text">Camelot-Keys in der Trackliste, harmonische Nachbarn grün markiert. Suche nach Titel, Artist, Genre, Key und BPM. Smart-Vorschläge für den nächsten Track.</p>
-        </div>
-        <div class="feature__media">
-          <img src="./screenshots/library.jpg" width="1600" height="1000" alt="ClimaxDJ Bibliothek mit Camelot-Tonarten und farbigen Key-Badges" loading="lazy">
-        </div>
-      </article>
-
-      <article class="feature">
-        <div class="feature__copy">
-          <h3 class="feature__title">Sampler mit Slicer</h3>
-          <p class="feature__text">Acht Pads am Deck, eigene Samples laden. In der DAW: One-Shot oder Slicer-Modus mit Waveform, Tune, Attack und Release.</p>
-        </div>
-        <div class="feature__media">
-          <img src="./screenshots/slicer.jpg" width="1600" height="1000" alt="ClimaxDJ DAW mit Step-Sequencer und Sampler im Slicer-Modus" loading="lazy">
-        </div>
-      </article>
-
-      <article class="feature">
-        <div class="feature__copy">
-          <h3 class="feature__title">Aufnahme und VST</h3>
-          <p class="feature__text">Mikrofon und Line in die DAW, DJ-Mix vom Master mitschneiden. VST-Finder scannt Plugin-Ordner. Live-Streaming für Instrumente und Effekte – getestet mit Native Instruments Kontakt 7, Maschine 2 und Massive X.</p>
-        </div>
-        <div class="feature__media">
-          <img src="./screenshots/vst.jpg" width="1600" height="1000" alt="Einstellungen Plugins und VST-Finder in ClimaxDJ" loading="lazy">
-        </div>
-      </article>
-    </section>
-
-    <section class="gallery" id="gallery" aria-label="Einblicke in die Oberfläche">
-      <figure class="g1">
-        <img src="./screenshots/dj.jpg" width="1400" height="900" alt="Leere Dual-Deck-Ansicht von ClimaxDJ" loading="lazy">
-        <figcaption>Zwei Decks, Mixer, Pads</figcaption>
-      </figure>
-      <figure class="g2">
-        <img src="./screenshots/daw.jpg" width="1400" height="900" alt="ClimaxDJ DAW Song-Ansicht mit Playlist" loading="lazy">
-        <figcaption>DAW · Song-Ansicht</figcaption>
-      </figure>
-      <figure class="g3">
-        <img src="./screenshots/hero-daw.jpg" width="1600" height="900" alt="ClimaxDJ mit geladenen VST-Instrumenten im Channel Rack" loading="lazy">
-        <figcaption>VSTs im Channel Rack</figcaption>
-      </figure>
-      <figure class="g4">
-        <img src="./screenshots/settings.jpg" width="1200" height="900" alt="ClimaxDJ Einstellungsmenü" loading="lazy">
-        <figcaption>Einstellungen</figcaption>
-      </figure>
-      <figure class="g5">
-        <img src="./screenshots/stems.jpg" width="1600" height="1000" alt="Stem-Trennung Dialog" loading="lazy">
-        <figcaption>Stem-Trennung</figcaption>
-      </figure>
-      <figure class="g6">
-        <img src="./screenshots/desktop-front.jpg" width="1400" height="900" alt="ClimaxDJ Fenster auf dem Desktop" loading="lazy">
-        <figcaption>Desktop-App</figcaption>
-      </figure>
-    </section>
-
-    <section class="specs" id="specs" aria-labelledby="specs-title">
-      <div class="specs__grid">
-        <h2 class="specs__title" id="specs-title">System</h2>
-        <ul class="specs__list">
-          <li><strong>Plattform</strong><span>Windows 10/11, 64-Bit</span></li>
-          <li><strong>Mac</strong><span>bald verfügbar</span></li>
-          <li><strong>Audio</strong><span>WASAPI-Ausgabe, optionaler ClimaxDJ-ASIO-Treiber</span></li>
-          <li><strong>Controller</strong><span>MIDI, u. a. Pioneer DDJ-FLX4</span></li>
-          <li><strong>Plugins</strong><span>VST-Scan und Live-Hosting (Desktop-App)</span></li>
-          <li><strong>Stems (KI)</strong><span>optional, eigener Download der Engine</span></li>
-          <li><strong>Installer</strong><span>ClimaxDJ-Setup 4.3.0 · ca. 72&nbsp;MB</span></li>
-        </ul>
       </div>
     </section>
 
-    <section class="faq" id="faq" aria-labelledby="faq-title">
-      <h2 class="faq__title" id="faq-title">Fragen</h2>
-      <details>
-        <summary>Kostet ClimaxDJ etwas?</summary>
-        <p>Der Download hier ist der aktuelle Windows-Installer von Clemens Teppan. Es gibt keine In-App-Käufe auf dieser Seite.</p>
-      </details>
-      <details>
-        <summary>Ändert der Auto-DJ Tempo oder Tonhöhe?</summary>
-        <p>Nein. Songs laufen original. Übergänge entstehen über weiche Fades, EQ und Filter – bei größeren Tempo-Abständen über Filter-Sweep oder Echo-Out.</p>
-      </details>
-      <details>
-        <summary>Funktioniert Kontakt, Maschine und Massive X?</summary>
-        <p>Die App scannt VST-Ordner und streamt Plugins live in die DAW. Kontakt 7, Maschine 2 und Massive X sind dafür vorgesehen. Native Instruments muss bei dir installiert und lizenziert sein.</p>
-      </details>
-      <details>
-        <summary>Wann kommt Mac?</summary>
-        <p>Ein echter Mac-Build ist noch nicht fertig. Der Mac-Button bleibt bewusst auf „bald verfügbar“, statt einer Fake-Datei.</p>
-      </details>
-      <details>
-        <summary>Wohin gehen meine Aufnahmen?</summary>
-        <p>In den gewählten Aufnahmeordner – standardmäßig unter Musik/ClimaxDJ Aufnahmen. DJ-Mix und Mikro/Line kannst du getrennt aufnehmen.</p>
-      </details>
+    <!-- 5 AUDIO EXPERIENCE -->
+    <section class="audiox" id="audiox" aria-labelledby="audiox-title">
+      <div class="wrap">
+        <p class="section-kicker">Live waveform experience</p>
+        <h2 class="section-title" id="audiox-title">Feel the signal</h2>
+        <p class="section-lead">Canvas visualizer driven by a generated signal — reacts to mouse, scroll energy and your demo controls. No microphone required.</p>
+        <div class="viz-shell">
+          <canvas id="vizCanvas" width="1400" height="320" aria-label="Audio visualizer"></canvas>
+        </div>
+        <div class="viz-modes" id="vizModes">
+          <button type="button" class="chip is-on" data-viz="bars">Bars</button>
+          <button type="button" class="chip" data-viz="wave">Wave</button>
+          <button type="button" class="chip" data-viz="radial">Radial</button>
+          <button type="button" class="chip" data-viz="spectrum">Spectrum</button>
+        </div>
+      </div>
     </section>
 
-    <a class="cta-band" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>
-      <p class="cta-band__hint">Windows-Installer 4.3.0 · ca. 72&nbsp;MB · kein Account nötig</p>
-      <svg class="cta-band__arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34 L34 14 M18 14 H34 V30" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-      <p class="cta-band__word">Laden</p>
-    </a>
+    <!-- 6 PLATFORM -->
+    <section class="platform" id="download" aria-labelledby="download-title">
+      <div class="wrap">
+        <p class="section-kicker">Platform</p>
+        <h2 class="section-title" id="download-title">Download ClimaxDJ</h2>
+        <p class="section-lead">Windows installer ships today. macOS is on the roadmap — no fake files.</p>
+        <div class="plat-grid">
+          <article class="plat">
+            <div class="ver">Windows · v4.3.0</div>
+            <h3>Windows</h3>
+            <p>NSIS installer for 64-bit Windows. Desktop app with ASIO bridge, VST host and full DJ + DAW suite.</p>
+            <ul>
+              <li>Windows 10 / 11, 64-bit</li>
+              <li>Installer ≈ 72 MB</li>
+              <li>WASAPI output · optional ClimaxDJ ASIO</li>
+            </ul>
+            <a class="btn btn--primary" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>Download for Windows</a>
+          </article>
+          <article class="plat">
+            <div class="ver">macOS · Coming Soon</div>
+            <h3>macOS</h3>
+            <p>A signed Mac build is not ready yet. The button stays disabled on purpose.</p>
+            <ul>
+              <li>Build target not shipped</li>
+              <li>No .dmg / .pkg available</li>
+            </ul>
+            <span class="btn btn--ghost btn--disabled" aria-disabled="true">Coming Soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FINAL CTA -->
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <h2 id="cta-title">Ready to take control?</h2>
+        <p>Your next mix starts with ClimaxDJ.</p>
+        <a class="btn btn--primary" href="#download">Get ClimaxDJ</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="footer__top">
+    <div class="wrap footer__grid">
       <div>
-        <p class="footer__invite">Bereit für die Nacht?</p>
-        <a class="footer__btn" href="#download">Windows laden</a>
+        <div class="footer__brand">Climax<span>DJ</span></div>
+        <p>Beyond the Mix. Professional DJ + DAW software by Clemens Teppan, Graz.</p>
       </div>
-      <div class="footer__links">
-        <a href="./impressum.html">Impressum</a>
-        <a href="./datenschutz.html">Datenschutz</a>
-        <a href="https://github.com/PlayNation18/climaxdj/releases">Releases</a>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#top">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#download">Downloads</a></li>
+          <li><a href="./docs.html">Documentation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@climaxdj.local">Contact</a></li>
+          <li><a href="https://github.com/PlayNation18/climaxdj/releases">Releases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="./datenschutz.html">Privacy Policy</a></li>
+          <li><a href="./impressum.html">Legal Notice</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer__legal">
-      <span>© 2026 Clemens Teppan · Graz</span>
-      <span>Keine Analyse-Cookies · Fonts lokal</span>
+    <div class="wrap footer__bottom">
+      <span>© 2026 Clemens Teppan</span>
+      <span>No tracking · Local fonts · Demo ≠ app engine</span>
     </div>
-    <p class="footer__monument" aria-hidden="true">ClimaxDJ</p>
   </footer>
 
+  <script src="./assets/vendor/gsap.min.js" defer></script>
+  <script src="./assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="./main.js" defer></script>
 </body>
 </html>
