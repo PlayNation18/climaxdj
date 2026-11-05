@@ -1,0 +1,7 @@
+downloads/*.exe
+downloads/*.dmg
+downloads/*.pkg
+downloads/*.zip
+node_modules/
+.DS_Store
+screenshots/*.png

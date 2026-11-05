@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClimaxDJ – DJ + DAW für Windows</title>
+  <meta name="description" content="ClimaxDJ 4.3.0: Auto-DJ mit weichen Übergängen, 4-Stem-Trennung, Tonart-Markierung, Sampler mit Slicer, Aufnahme und VST-Support. Jetzt für Windows laden.">
+  <meta name="theme-color" content="#05070a">
+  <link rel="icon" href="./assets/icon.png" type="image/png">
+  <meta property="og:title" content="ClimaxDJ – DJ + DAW">
+  <meta property="og:description" content="Desktop-App für DJing und Produktion. Auto-DJ, Stems, Sampler, VST. Version 4.3.0 für Windows.">
+  <meta property="og:image" content="./screenshots/hero-dj.jpg">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="sr-only" href="#download">Zum Download springen</a>
+
+  <header class="nav" role="banner">
+    <a class="nav__mark" href="#top">ClimaxDJ</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav__links">
+        <li><a href="#features">Funktionen</a></li>
+        <li><a href="#gallery">Einblicke</a></li>
+        <li><a href="#specs">System</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="nav__cta" href="#download">Download</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Einstieg">
+      <!-- Hero video slot: drop /assets/hero.mp4 when ready. JS enables it if the file exists. -->
+      <video class="hero__video" id="heroVideo" muted loop playsinline preload="none" poster="./screenshots/hero-dj.jpg">
+        <source src="./assets/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__top">
+        <p class="hero__support">DJ und DAW in einer Desktop-App. Tempo und Tonhöhe bleiben beim Auto-DJ original – Übergänge laufen über weiche Fades, EQ und Filter.</p>
+        <p class="hero__version">Version 4.3.0<br>Windows x64</p>
+      </div>
+
+      <h1 class="hero__monument">
+        <span class="hero__line"><span>Climax</span></span>
+        <span class="hero__line"><span>DJ</span></span>
+      </h1>
+
+      <div class="hero__actions" id="download">
+        <a class="btn btn--primary" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>
+          Windows laden
+          <small>Setup · ca. 72&nbsp;MB</small>
+        </a>
+        <span class="btn btn--disabled" aria-disabled="true" title="Mac-Build folgt">
+          Mac
+          <small>bald verfügbar</small>
+        </span>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-title">
+      <h2 class="features__head" id="features-title">Was drin ist</h2>
+
+      <article class="feature">
+        <div class="feature__copy">
+          <h3 class="feature__title">Auto-DJ, der das Tempo lässt</h3>
+          <p class="feature__text">Übergänge starten auf einer 8-Takt-Phrase. Der neue Track setzt mit dem ersten Downbeat ein. Bass-Swap zur Hälfte, weiche Lautstärkekurven. Tempo und Pitch bleiben unverändert – bei größeren Abständen greifen Filter-Sweep oder Echo-Out.</p>
+        </div>
+        <div class="feature__media">
+          <img src="./screenshots/hero-dj.jpg" width="1600" height="900" alt="ClimaxDJ DJ-Ansicht mit zwei Decks, Waveforms und Bibliothek" loading="eager">
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature__copy">
+          <h3 class="feature__title">Vier Stems aus einem Track</h3>
+          <p class="feature__text">Vocals, Drums, Bass und Melodie trennen – per KI-Engine (Demucs) oder schnell ohne KI. Danach einzeln mischen, muten oder in die DAW ziehen.</p>
+        </div>
+        <div class="feature__media">
+          <img src="./screenshots/stems.jpg" width="1600" height="1000" alt="Dialog Stems trennen in ClimaxDJ mit Vocals, Drums, Bass und Melodie" loading="lazy">
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature__copy">
+          <h3 class="feature__title">Tonart in der Bibliothek</h3>
+          <p class="feature__text">Camelot-Keys in der Trackliste, harmonische Nachbarn grün markiert. Suche nach Titel, Artist, Genre, Key und BPM. Smart-Vorschläge für den nächsten Track.</p>
+        </div>
+        <div class="feature__media">
+          <img src="./screenshots/library.jpg" width="1600" height="1000" alt="ClimaxDJ Bibliothek mit Camelot-Tonarten und farbigen Key-Badges" loading="lazy">
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature__copy">
+          <h3 class="feature__title">Sampler mit Slicer</h3>
+          <p class="feature__text">Acht Pads am Deck, eigene Samples laden. In der DAW: One-Shot oder Slicer-Modus mit Waveform, Tune, Attack und Release.</p>
+        </div>
+        <div class="feature__media">
+          <img src="./screenshots/slicer.jpg" width="1600" height="1000" alt="ClimaxDJ DAW mit Step-Sequencer und Sampler im Slicer-Modus" loading="lazy">
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature__copy">
+          <h3 class="feature__title">Aufnahme und VST</h3>
+          <p class="feature__text">Mikrofon und Line in die DAW, DJ-Mix vom Master mitschneiden. VST-Finder scannt Plugin-Ordner. Live-Streaming für Instrumente und Effekte – getestet mit Native Instruments Kontakt 7, Maschine 2 und Massive X.</p>
+        </div>
+        <div class="feature__media">
+          <img src="./screenshots/vst.jpg" width="1600" height="1000" alt="Einstellungen Plugins und VST-Finder in ClimaxDJ" loading="lazy">
+        </div>
+      </article>
+    </section>
+
+    <section class="gallery" id="gallery" aria-label="Einblicke in die Oberfläche">
+      <figure class="g1">
+        <img src="./screenshots/dj.jpg" width="1400" height="900" alt="Leere Dual-Deck-Ansicht von ClimaxDJ" loading="lazy">
+        <figcaption>Zwei Decks, Mixer, Pads</figcaption>
+      </figure>
+      <figure class="g2">
+        <img src="./screenshots/daw.jpg" width="1400" height="900" alt="ClimaxDJ DAW Song-Ansicht mit Playlist" loading="lazy">
+        <figcaption>DAW · Song-Ansicht</figcaption>
+      </figure>
+      <figure class="g3">
+        <img src="./screenshots/hero-daw.jpg" width="1600" height="900" alt="ClimaxDJ mit geladenen VST-Instrumenten im Channel Rack" loading="lazy">
+        <figcaption>VSTs im Channel Rack</figcaption>
+      </figure>
+      <figure class="g4">
+        <img src="./screenshots/settings.jpg" width="1200" height="900" alt="ClimaxDJ Einstellungsmenü" loading="lazy">
+        <figcaption>Einstellungen</figcaption>
+      </figure>
+      <figure class="g5">
+        <img src="./screenshots/stems.jpg" width="1600" height="1000" alt="Stem-Trennung Dialog" loading="lazy">
+        <figcaption>Stem-Trennung</figcaption>
+      </figure>
+      <figure class="g6">
+        <img src="./screenshots/desktop-front.jpg" width="1400" height="900" alt="ClimaxDJ Fenster auf dem Desktop" loading="lazy">
+        <figcaption>Desktop-App</figcaption>
+      </figure>
+    </section>
+
+    <section class="specs" id="specs" aria-labelledby="specs-title">
+      <div class="specs__grid">
+        <h2 class="specs__title" id="specs-title">System</h2>
+        <ul class="specs__list">
+          <li><strong>Plattform</strong><span>Windows 10/11, 64-Bit</span></li>
+          <li><strong>Mac</strong><span>bald verfügbar</span></li>
+          <li><strong>Audio</strong><span>WASAPI-Ausgabe, optionaler ClimaxDJ-ASIO-Treiber</span></li>
+          <li><strong>Controller</strong><span>MIDI, u. a. Pioneer DDJ-FLX4</span></li>
+          <li><strong>Plugins</strong><span>VST-Scan und Live-Hosting (Desktop-App)</span></li>
+          <li><strong>Stems (KI)</strong><span>optional, eigener Download der Engine</span></li>
+          <li><strong>Installer</strong><span>ClimaxDJ-Setup 4.3.0 · ca. 72&nbsp;MB</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <h2 class="faq__title" id="faq-title">Fragen</h2>
+      <details>
+        <summary>Kostet ClimaxDJ etwas?</summary>
+        <p>Der Download hier ist der aktuelle Windows-Installer von Clemens Teppan. Es gibt keine In-App-Käufe auf dieser Seite.</p>
+      </details>
+      <details>
+        <summary>Ändert der Auto-DJ Tempo oder Tonhöhe?</summary>
+        <p>Nein. Songs laufen original. Übergänge entstehen über weiche Fades, EQ und Filter – bei größeren Tempo-Abständen über Filter-Sweep oder Echo-Out.</p>
+      </details>
+      <details>
+        <summary>Funktioniert Kontakt, Maschine und Massive X?</summary>
+        <p>Die App scannt VST-Ordner und streamt Plugins live in die DAW. Kontakt 7, Maschine 2 und Massive X sind dafür vorgesehen. Native Instruments muss bei dir installiert und lizenziert sein.</p>
+      </details>
+      <details>
+        <summary>Wann kommt Mac?</summary>
+        <p>Ein echter Mac-Build ist noch nicht fertig. Der Mac-Button bleibt bewusst auf „bald verfügbar“, statt einer Fake-Datei.</p>
+      </details>
+      <details>
+        <summary>Wohin gehen meine Aufnahmen?</summary>
+        <p>In den gewählten Aufnahmeordner – standardmäßig unter Musik/ClimaxDJ Aufnahmen. DJ-Mix und Mikro/Line kannst du getrennt aufnehmen.</p>
+      </details>
+    </section>
+
+    <a class="cta-band" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>
+      <p class="cta-band__hint">Windows-Installer 4.3.0 · ca. 72&nbsp;MB · kein Account nötig</p>
+      <svg class="cta-band__arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 34 L34 14 M18 14 H34 V30" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+      <p class="cta-band__word">Laden</p>
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__invite">Bereit für die Nacht?</p>
+        <a class="footer__btn" href="#download">Windows laden</a>
+      </div>
+      <div class="footer__links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+        <a href="https://github.com/PlayNation18/climaxdj/releases">Releases</a>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Clemens Teppan · Graz</span>
+      <span>Keine Analyse-Cookies · Fonts lokal</span>
+    </div>
+    <p class="footer__monument" aria-hidden="true">ClimaxDJ</p>
+  </footer>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
