@@ -6,10 +6,11 @@
   var scrollEnergy = 0, lastScroll = 0, demoBoost = 0;
   var t0 = performance.now();
 
-  /* Cinematic CLIMAXDJ intro — once per session, max ~2.5s, skippable */
+  /* Cinematic CLIMAXDJ intro — once at site start, ~2.5s, NOT skippable */
   var introDone = false;
   var introTl = null;
   var heroMotionStarted = false;
+  var introStarted = false;
 
   function finishIntro() {
     if (introDone) return;
@@ -33,14 +34,16 @@
   }
 
   function runIntro() {
+    if (introStarted) return; // guard double-init
+    introStarted = true;
     var intro = document.getElementById("intro");
     var mark = document.getElementById("introMark");
     var sweep = intro ? intro.querySelector(".intro__sweep") : null;
-    var skipBtn = document.getElementById("introSkip");
     var seen = false;
     try { seen = sessionStorage.getItem("climaxdj-intro-seen") === "1"; } catch (e) {}
 
-    if (!intro || reduce || seen || typeof gsap === "undefined") {
+    // Already seen this session, or no GSAP: skip overlay, show hero
+    if (!intro || seen || typeof gsap === "undefined") {
       if (intro) intro.classList.add("is-done");
       document.body.classList.remove("intro-lock");
       introDone = true;
@@ -48,32 +51,30 @@
       return;
     }
 
+    // Reduced motion: very short fade (~0.35s), still once, not skippable by user
+    if (reduce) {
+      document.body.classList.add("intro-lock");
+      gsap.set(mark, { opacity: 1, scale: 1, filter: "blur(0px)" });
+      introTl = gsap.timeline({ onComplete: finishIntro });
+      introTl.to(intro, { opacity: 0, duration: 0.35, delay: 0.2, ease: "power1.inOut" });
+      return;
+    }
+
     document.body.classList.add("intro-lock");
-    if (skipBtn) skipBtn.addEventListener("click", finishIntro);
-    intro.addEventListener("click", function (e) {
-      if (e.target && e.target.closest && e.target.closest(".intro__skip")) return;
-      finishIntro();
-    });
-    document.addEventListener("keydown", function onKey(e) {
-      if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        finishIntro();
-        document.removeEventListener("keydown", onKey);
-      }
-    });
+    // No skip: ignore clicks / keys / scroll — pointer-events stay on overlay until done
 
     introTl = gsap.timeline({
       defaults: { ease: "power3.out" },
       onComplete: finishIntro
     });
-    // total ~2.45s
+    // total ~2.5s
     introTl.set(mark, { opacity: 0, scale: 1.18, filter: "blur(24px)" });
     introTl.to(mark, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.7 }, 0);
     if (sweep) {
       introTl.fromTo(sweep, { opacity: 0, xPercent: -70 }, { opacity: 1, xPercent: 70, duration: 0.85, ease: "power2.inOut" }, 0.55);
       introTl.to(sweep, { opacity: 0, duration: 0.25 }, 1.25);
     }
-    introTl.to({}, { duration: 0.35 }); // hold
+    introTl.to({}, { duration: 0.4 }); // hold
     introTl.to(mark, { opacity: 0, scale: 0.92, filter: "blur(16px)", duration: 0.55, ease: "power2.in" });
     introTl.to(intro, { opacity: 0, duration: 0.35, ease: "power2.in" }, "-=0.25");
   }
@@ -659,37 +660,6 @@
     gsap.utils.toArray(".callout, .eco__node").forEach(function (el, i) {
       gsap.from(el, { scrollTrigger: { trigger: el, start: "top 92%" }, opacity: 0, y: 18, duration: 0.5, delay: (i % 6) * 0.03 });
     });
-    /* Scroll-pinned CLIMAXDJ → dissolves into product worlds */
-    var wmPin = document.getElementById("wm-pin");
-    var wmMark = document.getElementById("wmMark");
-    if (wmPin && wmMark && window.ScrollTrigger) {
-      var wmTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: wmPin,
-          start: "top top",
-          end: "+=145%",
-          scrub: 0.65,
-          pin: true,
-          anticipatePin: 1
-        }
-      });
-      wmTl.fromTo(wmMark, {
-        opacity: 0, scale: 1.45, filter: "blur(22px)"
-      }, {
-        opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "none"
-      });
-      wmTl.to(wmMark, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.18, ease: "none" }); // hold
-      wmTl.to(wmMark, {
-        opacity: 0, scale: 3.4, filter: "blur(30px)", duration: 0.54, ease: "none"
-      });
-      wmTl.to(".wm-pin__hint", { opacity: 0, duration: 0.15 }, 0.28);
-      wmTl.fromTo("#worlds", { opacity: 0.35 }, { opacity: 1, duration: 0.35, ease: "none" }, 0.55);
-      gsap.from("#worlds .fcard", {
-        scrollTrigger: { trigger: "#worlds", start: "top 85%" },
-        opacity: 0, y: 28, scale: 0.96, duration: 0.7, stagger: 0.1, ease: "power3.out"
-      });
-    }
-
     var djShot = document.getElementById("djShot");
     if (djShot) {
       gsap.fromTo(djShot, { rotateX: 12, rotateY: -8, scale: 0.92, y: 40 }, {
