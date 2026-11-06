@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ClimaxDJ – More Than a DJ Software | DJ System, Studio &amp; Engine</title>
-  <meta name="description" content="ClimaxDJ 4.3.0 – professional DJ System, Studio/DAW and Audio Engine in one Windows platform. Mix, create, produce, perform.">
+  <meta name="description" content="ClimaxDJ — DJ System, Studio/DAW and Audio Engine. Windows installer 4.3.0; 4.5 source adds Reverse, Ghost Notes, chords, pattern variation, time signatures, Deck→DAW, duplicates & crash recovery.">
   <meta name="theme-color" content="#08090D">
   <meta property="og:title" content="ClimaxDJ – Create Your Sound. Control Your World.">
-  <meta property="og:description" content="DJ System · Studio / DAW · Audio Engine. Version 4.3.0 for Windows.">
+  <meta property="og:description" content="DJ System · Studio / DAW · Audio Engine. Windows 4.3.0 · 4.5 features in source.">
   <meta property="og:image" content="./screenshots/hero-dj.webp">
   <meta property="og:type" content="website">
   <link rel="icon" href="./assets/icon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20261106c">
+  <link rel="stylesheet" href="./premium.css?v=20261106c">
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
   <a class="sr-only" href="#main">Skip to content</a>
   <!-- Cinematic CLIMAXDJ wordmark intro (once per session) -->
   <div id="intro" class="intro" role="dialog" aria-label="ClimaxDJ intro" aria-modal="true">
@@ -36,6 +39,8 @@
         <li><a href="#world-dj">01 DJ System</a></li>
         <li><a href="#world-studio">02 Studio</a></li>
         <li><a href="#world-engine">03 Engine</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#v45">4.5</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="./downloads.html">Downloads</a></li>
         <li><a href="#about">About</a></li>
@@ -49,6 +54,8 @@
     <a href="#world-dj">01 DJ System</a>
     <a href="#world-studio">02 Studio / DAW</a>
     <a href="#world-engine">03 Audio Engine</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#v45">4.5</a>
     <a href="#features">Features</a>
     <a href="./downloads.html">Downloads</a>
     <a href="#about">About</a>
@@ -60,11 +67,15 @@
       <canvas class="hero__canvas" id="heroWave" aria-hidden="true"></canvas>
       <div class="hero__glow" id="heroGlow" aria-hidden="true"></div>
       <div class="hero__scrim" aria-hidden="true"></div>
-      <div class="hero__shot" aria-hidden="true">
-        <picture>
-          <source srcset="./screenshots/hero-dj.webp" type="image/webp">
-          <img src="./screenshots/hero-dj.jpg" width="1600" height="1000" alt="" loading="eager">
-        </picture>
+      <div class="hero__stage" id="heroStage" aria-hidden="true">
+        <div class="hero__shot">
+          <picture>
+            <source srcset="./screenshots/hero-dj.webp" type="image/webp">
+            <img src="./screenshots/hero-dj.jpg" width="1600" height="1000" alt="" loading="eager">
+          </picture>
+          <div class="hero__specular" id="heroSpecular"></div>
+          <div class="hero__edge"></div>
+        </div>
       </div>
       <div class="hero__content">
         <p class="hero__eyebrow">Complete creative platform</p>
@@ -76,11 +87,20 @@
         <p class="hero__copy">Mix. Create. Produce. Perform.
 Everything you need in one powerful music platform.</p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#world-dj">Explore ClimaxDJ</a>
-          <a class="btn btn--ghost" href="#world-studio">Discover the Studio</a>
+          <a class="btn btn--primary btn--magnetic" href="#world-dj"><span>Explore ClimaxDJ</span></a>
+          <a class="btn btn--ghost btn--magnetic" href="#world-studio"><span>Discover the Studio</span></a>
         </div>
       </div>
     </section>
+
+    
+    <!-- Feature marquee (real features only) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>2 / 4 Decks<i>·</i>Auto-DJ<i>·</i>Stems<i>·</i>Camelot Library<i>·</i>MIDI DDJ-FLX4<i>·</i>Piano Roll<i>·</i>Step Seq<i>·</i>VST3 Host<i>·</i>WASAPI<i>·</i>Reverse<i>·</i>Ghost Notes<i>·</i>Chord Generator<i>·</i>Pattern Variation<i>·</i>Time Signatures<i>·</i>Deck→DAW<i>·</i>Duplicates Finder<i>·</i>Crash Recovery</span>
+        <span>2 / 4 Decks<i>·</i>Auto-DJ<i>·</i>Stems<i>·</i>Camelot Library<i>·</i>MIDI DDJ-FLX4<i>·</i>Piano Roll<i>·</i>Step Seq<i>·</i>VST3 Host<i>·</i>WASAPI<i>·</i>Reverse<i>·</i>Ghost Notes<i>·</i>Chord Generator<i>·</i>Pattern Variation<i>·</i>Time Signatures<i>·</i>Deck→DAW<i>·</i>Duplicates Finder<i>·</i>Crash Recovery</span>
+      </div>
+    </div>
 
     <!-- SCROLL WORDmark → features transition -->
     <section class="wm-pin" id="wm-pin" aria-label="ClimaxDJ wordmark">
@@ -115,6 +135,126 @@ Everything you need in one powerful music platform.</p>
             <p>Audio processing, WASAPI output, ASIO bridge source, VST3 hosting and desktop integration.</p>
           </a>
         </div>
+      </div>
+    </section>
+
+
+    <!-- Horizontal gallery of real app views -->
+    <section class="hgal" id="gallery" aria-label="ClimaxDJ views">
+      <div class="hgal__head wrap-wide">
+        <p class="kicker">Inside the app</p>
+        <h2 class="h2">Real views. No desktop chrome.</h2>
+        <p class="lead">Scroll sideways through captured ClimaxDJ windows — DJ decks, library, stems, Studio, slicer, four-deck and VST hosting.</p>
+      </div>
+      <div class="hgal__rail" id="hgalRail" tabindex="0">
+        <figure class="hgal__card"><picture><source srcset="./screenshots/hero-dj.webp" type="image/webp"><img src="./screenshots/hero-dj.jpg" width="1600" height="1000" alt="DJ dual-deck view" loading="lazy"></picture><figcaption class="hgal__meta"><strong>DJ Decks</strong><span>Dual deck</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/library.webp" type="image/webp"><img src="./screenshots/library.jpg" width="1600" height="1000" alt="Library view" loading="lazy"></picture><figcaption class="hgal__meta"><strong>Library</strong><span>Camelot · BPM</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/dj-four.webp" type="image/webp"><img src="./screenshots/dj-four.jpg" width="1600" height="1000" alt="Four deck view" loading="lazy"></picture><figcaption class="hgal__meta"><strong>4 Decks</strong><span>A B C D</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/stems.webp" type="image/webp"><img src="./screenshots/stems.jpg" width="1600" height="1000" alt="Stems view" loading="lazy"></picture><figcaption class="hgal__meta"><strong>Stems</strong><span>4-stem UI</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/hero-daw.webp" type="image/webp"><img src="./screenshots/hero-daw.jpg" width="1600" height="1000" alt="Studio DAW" loading="lazy"></picture><figcaption class="hgal__meta"><strong>Studio</strong><span>Session / Song</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/slicer.webp" type="image/webp"><img src="./screenshots/slicer.jpg" width="1600" height="1000" alt="Sampler slicer" loading="lazy"></picture><figcaption class="hgal__meta"><strong>Sampler</strong><span>Slicer</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/daw.webp" type="image/webp"><img src="./screenshots/daw.jpg" width="1600" height="1000" alt="Arrangement view" loading="lazy"></picture><figcaption class="hgal__meta"><strong>Arrangement</strong><span>Playlist</span></figcaption></figure>
+        <figure class="hgal__card"><picture><source srcset="./screenshots/vst.webp" type="image/webp"><img src="./screenshots/vst.jpg" width="1600" height="1000" alt="VST hosting" loading="lazy"></picture><figcaption class="hgal__meta"><strong>VST3</strong><span>Host</span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Real numbers only -->
+    <div class="stats wrap-wide" aria-label="Product facts">
+      <div class="stat"><div class="stat__n"><span data-count="4" data-decimals="0">0</span></div><div class="stat__l">Decks maximum</div></div>
+      <div class="stat"><div class="stat__n"><span data-count="4" data-decimals="0">0</span></div><div class="stat__l">Stem channels</div></div>
+      <div class="stat"><div class="stat__n">≈<span data-count="72" data-decimals="0">0</span><em>MB</em></div><div class="stat__l">Windows installer</div></div>
+      <div class="stat"><div class="stat__n">4.3.0</div><div class="stat__l">Published Windows build</div></div>
+    </div>
+
+    <!-- Sticky storytelling on real screenshot -->
+    <section class="story wrap-wide" id="story" aria-label="Feature storytelling">
+      <div class="story__pin">
+        <div class="story__frame">
+          <picture>
+            <source srcset="./screenshots/hero-dj.webp" type="image/webp">
+            <img src="./screenshots/hero-dj.jpg" width="1600" height="1000" alt="ClimaxDJ DJ System" loading="lazy">
+          </picture>
+          <div class="story__hotspot" data-spot="decks" style="left:4%;top:6%;width:92%;height:38%"></div>
+          <div class="story__hotspot" data-spot="mixer" style="left:38%;top:42%;width:24%;height:22%"></div>
+          <div class="story__hotspot" data-spot="library" style="left:4%;top:66%;width:92%;height:30%"></div>
+          <div class="story__hotspot" data-spot="wave" style="left:4%;top:14%;width:92%;height:18%"></div>
+        </div>
+      </div>
+      <div class="story__steps">
+        <p class="kicker">Scroll story</p>
+        <h2 class="h2" style="margin-bottom:1rem">The booth, region by region.</h2>
+        <article class="story__step" data-spot="decks">
+          <h3>Dual &amp; four decks</h3>
+          <p>Independent A/B (and C/D) with Sync, Slip, hot cues, loops and reverse playback in the 4.5 source line.</p>
+          <span class="tag">DJ System</span>
+        </article>
+        <article class="story__step" data-spot="wave">
+          <h3>Real-time waveforms</h3>
+          <p>Multi-band scrolling waveforms with beatgrid — the performance view you mix against.</p>
+          <span class="tag">DJ System</span>
+        </article>
+        <article class="story__step" data-spot="mixer">
+          <h3>Mixer &amp; crossfader</h3>
+          <p>Faders, EQ, filter and crossfader modes at the center of the booth.</p>
+          <span class="tag">DJ System</span>
+        </article>
+        <article class="story__step" data-spot="library">
+          <h3>Camelot-aware library</h3>
+          <p>Search, playlists, BPM/key and a duplicates finder (4.5 source) to keep crates clean.</p>
+          <span class="tag tag--blue">Library</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4.5 features — honest labels -->
+    <section class="v45" id="v45" aria-labelledby="v45-title">
+      <div class="wrap-wide">
+        <p class="kicker">4.5 source line</p>
+        <h2 class="h2" id="v45-title">New creative power.</h2>
+        <p class="lead">These ship in the ClimaxDJ 4.5 source (<code style="color:var(--text)">ext45.js</code>). The public Windows installer on GitHub Releases is still <strong style="color:var(--text)">4.3.0</strong> — we do not pretend otherwise.</p>
+        <div class="v45__grid">
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Reverse Playback</h3>
+            <p>Deck A/B reverse toggle for creative transitions and rewind energy.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Ghost Notes</h3>
+            <p>See notes from other channels in the piano roll while you write.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Chord generator</h3>
+            <p>Insert maj/min/7th/sus/power chords at the playhead in one click.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Pattern variation</h3>
+            <p>Slightly mutate the current pattern for faster idea branching.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Time signatures</h3>
+            <p>Project time signatures: 4/4, 3/4, 6/8, 5/4. Mid-song changes still in development.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge v45__badge--soft">Source · partial</span>
+            <h3>Deck → DAW</h3>
+            <p>Send a loaded deck track into the DAW arrangement as an audio clip.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Duplicates finder</h3>
+            <p>Scan the library for duplicate tracks and keep the crate clean.</p>
+          </article>
+          <article class="v45__card">
+            <span class="v45__badge">Source · available</span>
+            <h3>Crash recovery</h3>
+            <p>Autosave stamp + banner to reopen the last named DAW project after a restart.</p>
+          </article>
+        </div>
+        <p class="honesty">Honesty rule: “Source · available” means implemented in the 4.5 extension and verified in app source. The downloadable build linked below remains ClimaxDJ-Setup-4.3.0.exe until a 4.5 release is published.</p>
       </div>
     </section>
 
@@ -405,7 +545,7 @@ Everything you need in one powerful music platform.</p>
     <section class="section" id="features" aria-labelledby="features-title">
       <div class="wrap">
         <p class="kicker">Across all worlds</p>
-        <h2 class="h2" id="features-title">What ships in 4.3.0</h2>
+        <h2 class="h2" id="features-title">What ships today</h2>
         <div class="feat-grid">
           <article class="fcard"><h3>Professional Mixing</h3><p>2/4 decks, crossfader modes, EQ, Sync, Slip, Auto-DJ with original tempo.</p></article>
           <article class="fcard"><h3>Intelligent Analysis</h3><p>BPM, Camelot key, energy and harmonic library marking.</p></article>
@@ -415,6 +555,7 @@ Everything you need in one powerful music platform.</p>
           <article class="fcard"><h3>MIDI Controllers</h3><p>Learn mode and ready Pioneer DDJ-FLX4 mappings.</p></article>
           <article class="fcard"><h3>VST3 + NI</h3><p>Finder and live hosting — Kontakt 7, Maschine 2, Massive X supported paths.</p></article>
           <article class="fcard"><h3>Recording &amp; Export</h3><p>DJ mix / mic / line recording, WAV song export and stems.</p></article>
+          <article class="fcard"><h3>4.5 creative tools</h3><p>Reverse, Ghost Notes, chords, pattern variation, time signatures, duplicates, crash recovery — in source.</p><span class="tag-dev">Source 4.5</span></article>
           <article class="fcard"><h3>macOS build</h3><p>Not in the current electron-builder targets.</p><span class="tag-dev">Coming Soon</span></article>
         </div>
       </div>
@@ -435,10 +576,12 @@ Everything you need in one powerful music platform.</p>
       <div class="wrap">
         <h2 id="cta-title">Create your sound. Control your world.</h2>
         <p>Your next mix — and your next track — start with ClimaxDJ.</p>
-        <a class="btn btn--primary" href="./downloads.html">Get ClimaxDJ</a>
+        <a class="btn btn--primary btn--magnetic" href="./downloads.html"><span>Get ClimaxDJ</span></a>
       </div>
     </section>
   </main>
+
+  <button type="button" class="sound-fab" id="soundFab" aria-pressed="false" title="Optional section sounds (off by default)">Sound</button>
 
   <footer class="footer">
     <div class="wrap footer__grid">
@@ -477,8 +620,10 @@ Everything you need in one powerful music platform.</p>
     </div>
   </footer>
 
-  <script src="./assets/vendor/gsap.min.js" defer></script>
-  <script src="./assets/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="./main.js" defer></script>
+  <script src="./assets/vendor/gsap.min.js?v=20261106c" defer></script>
+  <script src="./assets/vendor/ScrollTrigger.min.js?v=20261106c" defer></script>
+  <script src="./assets/vendor/lenis.min.js?v=20261106c" defer></script>
+  <script src="./main.js?v=20261106c" defer></script>
+  <script src="./premium.js?v=20261106c" defer></script>
 </body>
 </html>

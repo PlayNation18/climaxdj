@@ -655,8 +655,9 @@
     if (reduce || typeof gsap === "undefined") return;
     if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
     /* Hero entrance is started by finishIntro / runIntro after the wordmark */
-    gsap.utils.toArray(".fcard, .callout, .engine-item, .eco__node").forEach(function (el, i) {
-      gsap.from(el, { scrollTrigger: { trigger: el, start: "top 90%" }, opacity: 0, y: 22, duration: 0.55, delay: (i % 6) * 0.04 });
+    /* Text scroll in premium.js owns fade/blur; keep a light lift only on cards */
+    gsap.utils.toArray(".callout, .eco__node").forEach(function (el, i) {
+      gsap.from(el, { scrollTrigger: { trigger: el, start: "top 92%" }, opacity: 0, y: 18, duration: 0.5, delay: (i % 6) * 0.03 });
     });
     /* Scroll-pinned CLIMAXDJ → dissolves into product worlds */
     var wmPin = document.getElementById("wm-pin");

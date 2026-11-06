@@ -7,7 +7,8 @@
   <meta name="description" content="Download ClimaxDJ 4.3.0 for Windows. DJ System and Studio are included in one installer. macOS coming soon.">
   <meta name="theme-color" content="#08090D">
   <link rel="icon" href="./assets/icon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20261106c">
+  <link rel="stylesheet" href="./premium.css?v=20261106c">
 </head>
 <body>
   <header class="nav is-scrolled">
@@ -44,7 +45,7 @@
               <li>Ships inside ClimaxDJ-Setup-4.3.0.exe</li>
               <li>Same app window · switch via DJ / DAW</li>
             </ul>
-            <a class="btn btn--primary" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>Download for Windows</a>
+            <a class="btn btn--primary btn--magnetic" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>Download for Windows</a>
           </article>
           <article class="dl-card">
             <div class="ver" style="color:var(--deck-b)">02 · Studio — included</div>
@@ -94,14 +95,20 @@
         </div>
 
         <div class="notes">
-          <h3>Install instructions</h3>
-          <ol style="color:var(--text2);padding-left:1.2rem;margin:0">
-            <li>Download <strong style="color:var(--text)">ClimaxDJ-Setup-4.3.0.exe</strong>.</li>
-            <li>Run the NSIS installer (choose install directory if prompted).</li>
-            <li>Launch ClimaxDJ from the Start menu / desktop shortcut.</li>
-            <li>Select your music folder when asked.</li>
-            <li>Optional: Settings → Audio / ASIO to register the ASIO bridge; Plugins / VST to scan VST3 folders.</li>
-          </ol>
+          <h3>Install in four steps</h3>
+          <div class="dl-steps" id="dlSteps">
+            <article class="dl-step" data-step="01"><h3>Download</h3><p>Get <strong style="color:var(--text)">ClimaxDJ-Setup-4.3.0.exe</strong> (~72&nbsp;MB) from GitHub Releases.</p></article>
+            <article class="dl-step" data-step="02"><h3>Install</h3><p>Run the NSIS installer and pick a folder if prompted.</p></article>
+            <article class="dl-step" data-step="03"><h3>Launch</h3><p>Open ClimaxDJ from Start menu or desktop shortcut.</p></article>
+            <article class="dl-step" data-step="04"><h3>Load music</h3><p>Choose your music folder. Optional: Settings → Audio / VST scan.</p></article>
+          </div>
+        </div>
+        <div class="notes">
+          <h3>4.5 source features</h3>
+          <ul>
+            <li>Reverse, Ghost Notes, chord generator, pattern variation, time signatures, Deck→DAW, duplicates finder, crash recovery — implemented in <code style="color:var(--text)">ext45.js</code>.</li>
+            <li>Public Windows build linked above remains <strong style="color:var(--text)">4.3.0</strong> until a 4.5 release is published.</li>
+          </ul>
         </div>
 
         <p style="margin-top:2rem"><a class="btn btn--ghost" href="./index.html">← Back to site</a></p>
@@ -115,5 +122,9 @@
       <span><a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a></span>
     </div>
   </footer>
+  <div class="grain" aria-hidden="true"></div>
+  <script src="./assets/vendor/gsap.min.js?v=20261106c" defer></script>
+  <script src="./assets/vendor/ScrollTrigger.min.js?v=20261106c" defer></script>
+  <script src="./premium.js?v=20261106c" defer></script>
 </body>
 </html>
