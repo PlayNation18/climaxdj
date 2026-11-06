@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Downloads – ClimaxDJ 4.7.0</title>
-  <meta name="description" content="Download ClimaxDJ 4.7.0 — one app with DJ System, Studio/DAW and Engine. Windows and macOS (Apple Silicon + Intel).">
+  <title>Downloads – ClimaxDJ 4.8.2</title>
+  <meta name="description" content="Download ClimaxDJ 4.8.2 — one app with DJ System, Studio/DAW, Engine, AI Sample Lab and Stem Studio. Windows and macOS.">
   <meta name="theme-color" content="#08090D">
   <link rel="icon" href="./assets/icon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css?v=20261106f">
-  <link rel="stylesheet" href="./premium.css?v=20261106f">
+  <link rel="stylesheet" href="./styles.css?v=20261106g">
+  <link rel="stylesheet" href="./premium.css?v=20261106g">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -31,8 +31,8 @@
     <section class="dl-hero" id="download">
       <div class="wrap">
         <p class="kicker">Download center</p>
-        <h1 class="h2" style="max-width:16ch">ClimaxDJ 4.7.0</h1>
-        <p class="lead"><strong style="color:var(--text)">One app:</strong> DJ System, Studio/DAW and Engine included. Choose your platform — there are no separate DJ or Studio downloads.</p>
+        <h1 class="h2" style="max-width:16ch">ClimaxDJ 4.8.2</h1>
+        <p class="lead"><strong style="color:var(--text)">One app:</strong> DJ System, Studio/DAW and Engine included — plus AI Sample Lab and Stem Studio. Choose your platform; there are no separate product downloads.</p>
       </div>
     </section>
 
@@ -40,54 +40,65 @@
       <div class="wrap">
         <div class="dl-grid" id="platforms">
           <article class="dl-card" id="windows">
-            <div class="ver">Windows ×64 · v4.7.0</div>
+            <div class="ver">Windows ×64 · v4.8.2</div>
             <h2>Windows</h2>
-            <p style="margin:0;color:var(--text2)">NSIS installer · ≈&nbsp;72&nbsp;MB · full ClimaxDJ (DJ + Studio + Engine)</p>
+            <p style="margin:0;color:var(--text2)">NSIS installer · ≈&nbsp;72&nbsp;MB · full ClimaxDJ</p>
             <ul>
               <li>Windows 10 / 11, 64-bit</li>
-              <li>One setup — switch DJ / DAW inside the app</li>
-              <li>WASAPI · optional ASIO bridge · VST3 host</li>
+              <li>One setup — DJ / DAW / Sample Lab / Stem Studio inside the app</li>
+              <li>WASAPI device picker · buffer · sample rate · latency measurement</li>
             </ul>
-            <a class="btn btn--primary btn--magnetic" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.7.0/ClimaxDJ-Setup-4.7.0.exe" download><span>Download for Windows</span></a>
-            <p class="honesty" style="margin-top:.85rem">File: ClimaxDJ-Setup-4.7.0.exe</p>
+            <a class="btn btn--primary btn--magnetic" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.8.2/ClimaxDJ-Setup-4.8.2.exe" download><span>Download for Windows</span></a>
+            <p class="honesty" style="margin-top:.85rem">File: ClimaxDJ-Setup-4.8.2.exe</p>
           </article>
           <article class="dl-card" id="macos">
-            <div class="ver" style="color:var(--deck-b)">macOS · v4.7.0 · early preview</div>
+            <div class="ver" style="color:var(--deck-b)">macOS · v4.8.2 · early preview</div>
             <h2>macOS</h2>
-            <p style="margin:0;color:var(--text2)">Same full ClimaxDJ app as zip · macOS&nbsp;11+ (Electron&nbsp;33). Pick your chip.</p>
+            <p style="margin:0;color:var(--text2)">Same full app as zip · macOS&nbsp;11+ (Electron&nbsp;33). Pick your chip.</p>
             <ul>
               <li><strong style="color:var(--text)">Apple Silicon</strong> (M1–M6) → arm64 ≈&nbsp;92&nbsp;MB</li>
               <li><strong style="color:var(--text)">Intel Mac</strong> → x64 ≈&nbsp;96&nbsp;MB</li>
               <li>Unsigned / not notarized — see <a href="#mac-guide" style="color:var(--deck-b)">install guide</a></li>
             </ul>
             <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem">
-              <a class="btn btn--blue btn--magnetic" id="macArmBtn" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.7.0/ClimaxDJ-4.7.0-mac-arm64.zip" download><span>Apple Silicon · arm64</span></a>
-              <a class="btn btn--ghost btn--magnetic" id="macX64Btn" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.7.0/ClimaxDJ-4.7.0-mac-x64.zip" download><span>Intel · x64</span></a>
+              <a class="btn btn--blue btn--magnetic" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.8.2/ClimaxDJ-4.8.2-mac-arm64.zip" download><span>Apple Silicon · arm64</span></a>
+              <a class="btn btn--ghost btn--magnetic" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.8.2/ClimaxDJ-4.8.2-mac-x64.zip" download><span>Intel · x64</span></a>
             </div>
             <p class="honesty" style="margin-top:1rem">Early unsigned Mac build — not yet tested on all Macs. Feedback welcome.</p>
           </article>
         </div>
 
-        <!-- What's included — feature info only, NO download buttons -->
         <div style="margin-top:2.75rem">
           <p class="kicker">What's inside</p>
-          <h2 class="h2" style="max-width:16ch">One installer. Three worlds.</h2>
-          <p class="lead">DJ System, Studio/DAW and Engine ship together. You do not download them separately.</p>
+          <h2 class="h2" style="max-width:18ch">One installer. Everything included.</h2>
+          <p class="lead">DJ System, Studio/DAW, Engine, AI Sample Lab and Stem Studio ship together.</p>
           <div class="feat-grid" style="grid-template-columns:repeat(3,1fr);margin-top:1.5rem">
             <article class="fcard">
               <p class="kicker" style="margin-bottom:.5rem">01</p>
               <h3>DJ System</h3>
-              <p>Dual/four decks, Auto-DJ, waveforms, FX, library, MIDI, recording, Reverse.</p>
+              <p>Dual/four decks, Auto-DJ, waveforms, FX, library, MIDI, recording.</p>
             </article>
             <article class="fcard">
               <p class="kicker" style="margin-bottom:.5rem;color:var(--deck-b)">02</p>
               <h3>Studio / DAW</h3>
-              <p>Arrangement, piano roll, step seq, synths, sampler, mixer, VST3, WAV export.</p>
+              <p>Arrangement, piano roll, synths, sampler, mixer, VST3, WAV export.</p>
             </article>
             <article class="fcard">
               <p class="kicker" style="margin-bottom:.5rem;color:var(--accent2)">03</p>
               <h3>Engine</h3>
-              <p>WASAPI output, ASIO bridge source, VST3 hosting and desktop integration.</p>
+              <p>Device picker, buffer, sample rate, latency meter. ASIO / WASAPI exclusive: In Development.</p>
+            </article>
+          </div>
+          <div class="feat-grid" style="grid-template-columns:repeat(2,1fr);margin-top:1rem">
+            <article class="fcard">
+              <p class="kicker" style="margin-bottom:.5rem">New in 4.8</p>
+              <h3>AI Sample Lab</h3>
+              <p>64 pads / 4 banks, MIDI learn, kits, slicing, FX, bitcrush, time-stretch, undo/redo, send to DAW.</p>
+            </article>
+            <article class="fcard">
+              <p class="kicker" style="margin-bottom:.5rem;color:var(--deck-b)">New in 4.8</p>
+              <h3>Stem Studio</h3>
+              <p>Song/Suno upload, 6-stem separation, Suno import, Polish A/B cleanup, send to DAW / decks / Sample Lab.</p>
             </article>
           </div>
         </div>
@@ -95,63 +106,37 @@
         <section class="mac-guide" id="mac-guide" aria-labelledby="mac-guide-title" style="margin-top:3.5rem">
           <p class="kicker">macOS</p>
           <h2 class="h2" id="mac-guide-title">Installation guide</h2>
-          <p class="lead">ClimaxDJ 4.7.0 for Mac is the same full app, shipped as architecture-specific zips. Choose the chip that matches your Mac, then follow Gatekeeper steps — the app is not Apple-signed.</p>
-
+          <p class="lead">Architecture-specific zips for Apple Silicon and Intel. Gatekeeper: the app is not Apple-signed.</p>
           <div class="dl-grid" style="margin-top:1.5rem">
             <article class="dl-card">
               <div class="ver">Which version?</div>
-              <h3 style="margin:0 0 .6rem;font-size:1.15rem;letter-spacing:-.02em">Apple Silicon vs Intel</h3>
+              <h3 style="margin:0 0 .6rem;font-size:1.15rem">Apple Silicon vs Intel</h3>
               <ul>
-                <li><strong style="color:var(--text)">Apple Silicon (M1, M2, M3, M4, M5, M6)</strong> → <strong style="color:var(--text)">arm64</strong> zip</li>
-                <li><strong style="color:var(--text)">Intel Mac</strong> → <strong style="color:var(--text)">x64</strong> zip</li>
+                <li><strong style="color:var(--text)">Apple Silicon (M1–M6)</strong> → arm64 zip</li>
+                <li><strong style="color:var(--text)">Intel Mac</strong> → x64 zip</li>
               </ul>
-              <p style="margin:.8rem 0 0;color:var(--text2);font-size:.92rem"><strong style="color:var(--text)">How to check:</strong> Apple menu → <em>About This Mac</em> → <em>Chip</em> (Apple M…) or <em>Processor</em> (Intel).</p>
+              <p style="margin:.8rem 0 0;color:var(--text2);font-size:.92rem"><strong style="color:var(--text)">How to check:</strong> Apple menu → About This Mac → Chip / Processor.</p>
               <p style="margin:.9rem 0 0"><a href="#macos" style="color:var(--deck-b);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase">↑ Get the Mac build</a></p>
             </article>
             <article class="dl-card">
               <div class="ver">Requirements</div>
-              <h3 style="margin:0 0 .6rem;font-size:1.15rem;letter-spacing:-.02em">macOS 11+</h3>
-              <p style="margin:0;color:var(--text2)">Built with <strong style="color:var(--text)">Electron 33.2.1</strong> — <strong style="color:var(--text)">macOS Big Sur (11) and up</strong>. No universal binary (separate arm64 / x64 zips).</p>
-              <p class="honesty" style="margin-top:1rem">Not Developer ID signed · not notarized · cross-built from Linux. Early preview — feedback welcome.</p>
+              <h3 style="margin:0 0 .6rem;font-size:1.15rem">macOS 11+</h3>
+              <p style="margin:0;color:var(--text2)">Electron 33 · Big Sur and up. Separate arm64 / x64 zips (no universal binary).</p>
+              <p class="honesty" style="margin-top:1rem">Not Developer ID signed · not notarized. Early preview — feedback welcome.</p>
             </article>
           </div>
-
           <h3 class="h2" style="font-size:clamp(1.4rem,3vw,2rem);margin:2.5rem 0 1rem">Install steps</h3>
           <div class="dl-steps" id="macSteps">
-            <article class="dl-step" data-step="01">
-              <h3>Download the zip</h3>
-              <p>Get the arm64 or x64 zip for your Mac from the macOS card above (~92–96&nbsp;MB).</p>
-            </article>
-            <article class="dl-step" data-step="02">
-              <h3>Unzip</h3>
-              <p>Double-click the zip. You should see <strong style="color:var(--text)">ClimaxDJ.app</strong>.</p>
-            </article>
-            <article class="dl-step" data-step="03">
-              <h3>Move to Applications</h3>
-              <p>Drag <strong style="color:var(--text)">ClimaxDJ.app</strong> into the Applications folder.</p>
-            </article>
-            <article class="dl-step" data-step="04">
-              <h3>First launch (Gatekeeper)</h3>
-              <p><strong style="color:var(--text)">Right-click</strong> ClimaxDJ.app → <strong style="color:var(--text)">Open</strong> → confirm <strong style="color:var(--text)">Open</strong>. Or System Settings → Privacy &amp; Security → <strong style="color:var(--text)">Open Anyway</strong>.</p>
-            </article>
+            <article class="dl-step" data-step="01"><h3>Download the zip</h3><p>arm64 or x64 from the macOS card above.</p></article>
+            <article class="dl-step" data-step="02"><h3>Unzip</h3><p>You should see <strong style="color:var(--text)">ClimaxDJ.app</strong>.</p></article>
+            <article class="dl-step" data-step="03"><h3>Move to Applications</h3><p>Drag ClimaxDJ.app into Applications.</p></article>
+            <article class="dl-step" data-step="04"><h3>First launch</h3><p>Right-click → Open → Open. Or Privacy &amp; Security → Open Anyway. Fallback: <code style="color:var(--text)">xattr -cr /Applications/ClimaxDJ.app</code></p></article>
           </div>
-
-          <div class="notes" style="margin-top:1.75rem">
-            <h3>If macOS still blocks the app</h3>
-            <p style="color:var(--text2);margin:0 0 .75rem">Clear quarantine in Terminal:</p>
-            <pre style="margin:0;padding:1rem 1.1rem;background:var(--surface);border-radius:12px;overflow:auto;font-size:.85rem;color:var(--text);border:1px solid rgba(255,255,255,.06)"><code>xattr -cr /Applications/ClimaxDJ.app</code></pre>
-          </div>
-
-          <div class="notes" style="margin-top:1.25rem">
-            <h3>Optional · stem separation runtime</h3>
-            <p style="color:var(--text2);margin:0">On first stem use, a local runtime may install (~150–400&nbsp;MB: Python venv + PyTorch + Demucs). Apple Silicon can use <strong style="color:var(--text)">MPS (Apple GPU)</strong> when available.</p>
-          </div>
-
           <div class="notes" style="margin-top:1.25rem">
             <h3>Honesty · early Mac preview</h3>
             <ul>
-              <li>Build <strong style="color:var(--text)">4.7.0</strong> is an early unsigned Mac preview — not tested on every Mac / macOS version.</li>
-              <li>Also see <a href="https://github.com/PlayNation18/climaxdj/releases/download/v4.7.0/MAC-INSTALL-4.7.0.txt" style="color:var(--deck-b)">MAC-INSTALL-4.7.0.txt</a>.</li>
+              <li>Build <strong style="color:var(--text)">4.8.2</strong> Mac zips are unsigned early previews.</li>
+              <li><a href="https://github.com/PlayNation18/climaxdj/releases/download/v4.8.2/MAC-INSTALL-4.8.2.txt" style="color:var(--deck-b)">MAC-INSTALL-4.8.2.txt</a></li>
             </ul>
           </div>
         </section>
@@ -159,19 +144,19 @@
         <div class="notes" style="margin-top:2.5rem">
           <h3>Windows · install in four steps</h3>
           <div class="dl-steps" id="dlSteps">
-            <article class="dl-step" data-step="01"><h3>Download</h3><p>Get <strong style="color:var(--text)">ClimaxDJ-Setup-4.7.0.exe</strong> (~72&nbsp;MB).</p></article>
-            <article class="dl-step" data-step="02"><h3>Install</h3><p>Run the NSIS installer and pick a folder if prompted.</p></article>
-            <article class="dl-step" data-step="03"><h3>Launch</h3><p>Open ClimaxDJ from Start menu or desktop shortcut.</p></article>
-            <article class="dl-step" data-step="04"><h3>Load music</h3><p>Choose your music folder. Optional: Settings → Audio / VST scan.</p></article>
+            <article class="dl-step" data-step="01"><h3>Download</h3><p><strong style="color:var(--text)">ClimaxDJ-Setup-4.8.2.exe</strong> (~72&nbsp;MB).</p></article>
+            <article class="dl-step" data-step="02"><h3>Install</h3><p>Run the NSIS installer.</p></article>
+            <article class="dl-step" data-step="03"><h3>Launch</h3><p>Open ClimaxDJ from Start / desktop.</p></article>
+            <article class="dl-step" data-step="04"><h3>Load music</h3><p>Choose your music folder. Optional: Settings → Audio / VST.</p></article>
           </div>
         </div>
 
         <div class="notes">
-          <h3>Release notes · 4.7.0</h3>
+          <h3>Release notes · 4.8.2</h3>
           <ul>
-            <li>One package: <strong style="color:var(--text)">DJ System + Studio/DAW + Engine</strong>.</li>
-            <li>Windows NSIS + macOS arm64 / x64 on GitHub Releases.</li>
-            <li>Electron <strong style="color:var(--text)">33.2.1</strong> · macOS 11+.</li>
+            <li><strong style="color:var(--text)">AI Sample Lab</strong> &amp; <strong style="color:var(--text)">Stem Studio</strong> included.</li>
+            <li>Low-latency controls: device, buffer, sample rate, latency measurement. ASIO / WASAPI exclusive output: <em>In Development</em>.</li>
+            <li>Windows + macOS arm64/x64 on GitHub Releases.</li>
           </ul>
         </div>
 
@@ -186,9 +171,9 @@
       <span><a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a></span>
     </div>
   </footer>
-  <script src="./assets/vendor/gsap.min.js?v=20261106f" defer></script>
-  <script src="./assets/vendor/ScrollTrigger.min.js?v=20261106f" defer></script>
-  <script src="./assets/vendor/lenis.min.js?v=20261106f" defer></script>
-  <script src="./premium.js?v=20261106f" defer></script>
+  <script src="./assets/vendor/gsap.min.js?v=20261106g" defer></script>
+  <script src="./assets/vendor/ScrollTrigger.min.js?v=20261106g" defer></script>
+  <script src="./assets/vendor/lenis.min.js?v=20261106g" defer></script>
+  <script src="./premium.js?v=20261106g" defer></script>
 </body>
 </html>

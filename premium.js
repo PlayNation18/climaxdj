@@ -254,7 +254,7 @@
       ".final h2", ".final p",
       ".hgal__head .kicker", ".hgal__head .h2", ".hgal__head .lead",
       "#about .h2", "#about .lead",
-      "#features-title", "#worlds-title", "#dj-title", "#studio-title",
+      "#features-title", "#worlds-title", "#dj-title", "#studio-title", "#lab-title",
       ".engine-item h3", ".engine-item p",
       ".notes h3", ".dl-step h3", ".dl-step p",
       ".dl-hero .h2", ".dl-hero .lead", ".dl-card h2", ".dl-card p"
