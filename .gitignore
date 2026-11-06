@@ -5,3 +5,4 @@ downloads/*.zip
 node_modules/
 .DS_Store
 screenshots/*.png
+screenshots/_new/
