@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloads – ClimaxDJ 4.3.0</title>
+  <meta name="description" content="Download ClimaxDJ 4.3.0 for Windows. DJ System and Studio are included in one installer. macOS coming soon.">
+  <meta name="theme-color" content="#08090D">
+  <link rel="icon" href="./assets/icon.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="nav is-scrolled">
+    <a class="nav__logo" href="./index.html">Climax<span>DJ</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#world-dj">01 DJ System</a></li>
+        <li><a href="./index.html#world-studio">02 Studio</a></li>
+        <li><a href="./index.html#world-engine">03 Engine</a></li>
+        <li><a href="./downloads.html" class="is-active">Downloads</a></li>
+      </ul>
+    </nav>
+    <a class="nav__cta" href="#win">Download</a>
+  </header>
+
+  <main>
+    <section class="dl-hero">
+      <div class="wrap">
+        <p class="kicker">Download center</p>
+        <h1 class="h2" style="max-width:18ch">Get ClimaxDJ 4.3.0</h1>
+        <p class="lead">One Windows installer includes <strong style="color:var(--text)">01 DJ System</strong>, <strong style="color:var(--text)">02 Studio</strong> and <strong style="color:var(--text)">03 Engine</strong>. There are no separate DJ/Studio downloads.</p>
+      </div>
+    </section>
+
+    <section class="section" id="win">
+      <div class="wrap">
+        <div class="dl-grid">
+          <article class="dl-card">
+            <div class="ver">01 · DJ System — included</div>
+            <h2>DJ System</h2>
+            <p style="margin:0;color:var(--text2)">Dual/four decks, Auto-DJ, waveforms, FX, library, MIDI, recording.</p>
+            <ul>
+              <li>Ships inside ClimaxDJ-Setup-4.3.0.exe</li>
+              <li>Same app window · switch via DJ / DAW</li>
+            </ul>
+            <a class="btn btn--primary" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>Download for Windows</a>
+          </article>
+          <article class="dl-card">
+            <div class="ver" style="color:var(--deck-b)">02 · Studio — included</div>
+            <h2>Studio / DAW</h2>
+            <p style="margin:0;color:var(--text2)">Arrangement, piano roll, step sequencer, synths, sampler, mixer, VST3, WAV export.</p>
+            <ul>
+              <li>Ships inside the same 4.3.0 setup</li>
+              <li>No separate Studio installer</li>
+            </ul>
+            <a class="btn btn--blue" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>Download for Windows</a>
+          </article>
+        </div>
+
+        <div class="dl-grid">
+          <article class="dl-card" id="windows">
+            <div class="ver">Windows ×64 · v4.3.0</div>
+            <h2>Windows</h2>
+            <p style="margin:0;color:var(--text2)">NSIS installer · ≈ 72 MB · productName ClimaxDJ · appId at.climaxdj.app</p>
+            <ul>
+              <li>Windows 10 / 11, 64-bit</li>
+              <li>WASAPI output (selectable device / buffer)</li>
+              <li>Optional ClimaxDJ ASIO bridge DLL (for other hosts)</li>
+              <li>VST3 host + stem engine helpers</li>
+            </ul>
+            <a class="btn btn--primary" href="https://github.com/PlayNation18/climaxdj/releases/download/v4.3.0/ClimaxDJ-Setup-4.3.0.exe" download>ClimaxDJ-Setup-4.3.0.exe</a>
+          </article>
+          <article class="dl-card">
+            <div class="ver">macOS</div>
+            <h2>macOS</h2>
+            <p style="margin:0;color:var(--text2)">No mac target in the current electron-builder config (win/NSIS only).</p>
+            <ul>
+              <li>No .dmg / .pkg published</li>
+              <li>Placeholder only — no fake file</li>
+            </ul>
+            <span class="btn btn--ghost btn--disabled" aria-disabled="true">Coming Soon</span>
+          </article>
+        </div>
+
+        <div class="notes">
+          <h3>Release notes · 4.3.0</h3>
+          <ul>
+            <li>Desktop app version <strong style="color:var(--text)">4.3.0</strong> (Electron build).</li>
+            <li>VST live streaming into the DAW (instrument channels, inserts, automation, realtime bounce) — <code style="color:var(--text)">ext43.js</code>.</li>
+            <li>Prior line: 4.2.0 → 4.2.1 → 4.3.0 Windows setups in <code style="color:var(--text)">dist/</code>.</li>
+            <li>Includes DJ System (2/4 decks, Auto-DJ, stems UI, MIDI) and Studio (PAT/SONG/SESSION, piano roll, sequencer, synths, sampler/slicer, mixer, WAV/stems export).</li>
+          </ul>
+        </div>
+
+        <div class="notes">
+          <h3>Install instructions</h3>
+          <ol style="color:var(--text2);padding-left:1.2rem;margin:0">
+            <li>Download <strong style="color:var(--text)">ClimaxDJ-Setup-4.3.0.exe</strong>.</li>
+            <li>Run the NSIS installer (choose install directory if prompted).</li>
+            <li>Launch ClimaxDJ from the Start menu / desktop shortcut.</li>
+            <li>Select your music folder when asked.</li>
+            <li>Optional: Settings → Audio / ASIO to register the ASIO bridge; Plugins / VST to scan VST3 folders.</li>
+          </ol>
+        </div>
+
+        <p style="margin-top:2rem"><a class="btn btn--ghost" href="./index.html">← Back to site</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__bottom" style="border:0;margin:0;padding:1.5rem 0">
+      <span>© 2026 Clemens Teppan</span>
+      <span><a href="./impressum.html">Impressum</a> · <a href="./datenschutz.html">Datenschutz</a></span>
+    </div>
+  </footer>
+</body>
+</html>
