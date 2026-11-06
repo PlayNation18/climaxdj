@@ -15,7 +15,18 @@
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
-  <div id="loader" role="status" aria-live="polite"><div><div class="loader__mark">Climax<span>DJ</span></div><div class="loader__bar" aria-hidden="true"><i></i></div></div></div>
+  <!-- Cinematic CLIMAXDJ wordmark intro (once per session) -->
+  <div id="intro" class="intro" role="dialog" aria-label="ClimaxDJ intro" aria-modal="true">
+    <div class="intro__stage" aria-hidden="true">
+      <div class="intro__glow intro__glow--a"></div>
+      <div class="intro__glow intro__glow--b"></div>
+      <div class="intro__mark" id="introMark">
+        <span class="intro__text">CLIMAXDJ</span>
+        <span class="intro__sweep" aria-hidden="true"></span>
+      </div>
+    </div>
+    <button type="button" class="intro__skip" id="introSkip">Skip</button>
+  </div>
 
   <header class="nav" id="nav" role="banner">
     <a class="nav__logo" href="#top">Climax<span>DJ</span></a>
@@ -68,6 +79,16 @@ Everything you need in one powerful music platform.</p>
           <a class="btn btn--primary" href="#world-dj">Explore ClimaxDJ</a>
           <a class="btn btn--ghost" href="#world-studio">Discover the Studio</a>
         </div>
+      </div>
+    </section>
+
+    <!-- SCROLL WORDmark → features transition -->
+    <section class="wm-pin" id="wm-pin" aria-label="ClimaxDJ wordmark">
+      <div class="wm-pin__sticky">
+        <div class="wm-pin__glow wm-pin__glow--a" aria-hidden="true"></div>
+        <div class="wm-pin__glow wm-pin__glow--b" aria-hidden="true"></div>
+        <p class="wm-pin__mark" id="wmMark" aria-hidden="true">CLIMAXDJ</p>
+        <p class="wm-pin__hint">Scroll to explore</p>
       </div>
     </section>
 

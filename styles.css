@@ -24,13 +24,37 @@ button{cursor:pointer;border:0;background:none}
 .wrap{width:min(1200px,100%);margin-inline:auto;padding-inline:var(--margin)}
 .wrap-wide{width:min(1400px,100%);margin-inline:auto;padding-inline:var(--margin)}
 
-#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:opacity .55s var(--ease),visibility .55s}
-#loader.is-done{opacity:0;visibility:hidden;pointer-events:none}
-.loader__mark{font-weight:900;letter-spacing:-.04em;text-transform:uppercase;font-size:clamp(1.3rem,3vw,1.8rem)}
-.loader__mark span{color:var(--brand)}
-.loader__bar{width:110px;height:2px;background:var(--surface);margin-top:1rem;overflow:hidden}
-.loader__bar i{display:block;height:100%;width:0;background:var(--brand);animation:load 1s var(--ease) forwards}
-@keyframes load{to{width:100%}}
+/* ——— Cinematic intro wordmark ——— */
+.intro{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;overflow:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.intro.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.intro__stage{position:relative;width:100%;height:100%;display:grid;place-items:center}
+.intro__glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(40px);opacity:.55}
+.intro__glow--a{width:min(70vw,720px);height:min(70vw,720px);background:radial-gradient(circle,rgba(255,90,31,.45),transparent 68%);left:18%;top:28%;transform:translate(-50%,-50%)}
+.intro__glow--b{width:min(55vw,560px);height:min(55vw,560px);background:radial-gradient(circle,rgba(61,139,255,.4),transparent 68%);right:8%;bottom:18%;transform:translate(30%,30%)}
+.intro__mark{position:relative;display:inline-block;line-height:.82;transform:scale(1.12);opacity:0;filter:blur(22px);will-change:transform,opacity,filter}
+.intro__text{display:block;font-weight:900;font-size:clamp(3.4rem,18vw,14rem);letter-spacing:-.07em;text-transform:uppercase;color:var(--text);text-align:center;white-space:nowrap;padding:0 .04em}
+.intro__sweep{position:absolute;inset:-8% -12%;background:linear-gradient(105deg,transparent 35%,rgba(255,90,31,.55) 47%,rgba(61,139,255,.55) 53%,transparent 65%);mix-blend-mode:screen;opacity:0;transform:translateX(-60%);pointer-events:none;filter:blur(2px)}
+.intro__skip{position:absolute;right:var(--margin);bottom:1.4rem;z-index:2;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text2);padding:.65rem 1rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(8,9,13,.45);backdrop-filter:blur(8px)}
+.intro__skip:hover{color:var(--text);border-color:rgba(255,255,255,.28)}
+body.intro-lock{overflow:hidden}
+
+/* ——— Scroll-pinned wordmark → worlds ——— */
+.wm-pin{position:relative;background:var(--bg)}
+.wm-pin__sticky{height:100svh;display:grid;place-items:center;overflow:hidden;position:relative}
+.wm-pin__glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(48px);opacity:.35}
+.wm-pin__glow--a{width:min(60vw,640px);height:min(60vw,640px);background:radial-gradient(circle,rgba(255,90,31,.5),transparent 70%);left:20%;top:35%;transform:translate(-50%,-50%)}
+.wm-pin__glow--b{width:min(50vw,520px);height:min(50vw,520px);background:radial-gradient(circle,rgba(61,139,255,.45),transparent 70%);right:10%;bottom:20%;transform:translate(20%,20%)}
+.wm-pin__mark{position:relative;z-index:1;margin:0;font-weight:900;font-size:clamp(3.2rem,17vw,13.5rem);letter-spacing:-.07em;text-transform:uppercase;line-height:.82;text-align:center;white-space:nowrap;color:var(--text);opacity:0;transform:scale(1.35);filter:blur(18px);will-change:transform,opacity,filter}
+.wm-pin__hint{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);margin:0;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text2);opacity:.55;z-index:1}
+@media(max-width:700px){
+  .intro__text,.wm-pin__mark{letter-spacing:-.055em}
+}
+@media(prefers-reduced-motion:reduce){
+  .intro,.wm-pin__mark{transition:none!important}
+  .wm-pin__sticky{min-height:40vh;height:auto;padding:3rem 0}
+  .wm-pin__mark{opacity:1;transform:none;filter:none;font-size:clamp(2.4rem,12vw,6rem)}
+  .wm-pin__hint{display:none}
+}
 
 .nav{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem var(--margin);background:rgba(8,9,13,.78);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .25s,background .25s}
 .nav.is-scrolled{border-bottom-color:rgba(255,255,255,.06);background:rgba(8,9,13,.92)}
